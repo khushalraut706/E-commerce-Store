@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Product Details — Cartly</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div id="navbar"></div>
+
+<main class="container">
+  <div id="loadingSpinner" class="spinner"></div>
+  <div id="productDetail" class="product-detail hidden"></div>
+  <div id="notFound" class="empty-state hidden">
+    <div class="icon">📦</div>
+    <h2>Product not found</h2>
+    <p>This product may have been removed.</p>
+    <a href="index.html" class="btn btn-primary" style="margin-top:16px;">Back to shop</a>
+  </div>
+
+  <section id="relatedSection" class="hidden">
+    <div class="section-title-row"><h2>You might also like</h2></div>
+    <div id="relatedGrid" class="product-grid"></div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p><strong>Cartly</strong> — a demo full-stack e-commerce store. Built with Node, Express, MongoDB &amp; vanilla JS.</p>
+  </div>
+</footer>
+
+<script src="js/config.js"></script>
+<script src="js/api.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/product.js"></script>
+</body>
+</html>

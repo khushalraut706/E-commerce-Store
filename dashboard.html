@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>My Dashboard — Cartly</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div id="navbar"></div>
+
+<main class="container">
+  <div class="page-header">
+    <h1>My Dashboard</h1>
+    <p>Your profile and order history at a glance.</p>
+  </div>
+
+  <div class="profile-card" id="profileCard"></div>
+
+  <div class="stats-row">
+    <div class="stat-card">
+      <div class="value" id="statTotalOrders">0</div>
+      <div class="label">Total Orders Placed</div>
+    </div>
+    <div class="stat-card">
+      <div class="value" id="statTotalSpent">$0.00</div>
+      <div class="label">Total Spent</div>
+    </div>
+    <div class="stat-card">
+      <div class="value" id="statPending">0</div>
+      <div class="label">Orders In Progress</div>
+    </div>
+  </div>
+
+  <div class="section-title-row" style="padding-top:32px;">
+    <h2>Order History</h2>
+  </div>
+
+  <div id="loadingSpinner" class="spinner"></div>
+  <div id="ordersList" style="margin-top:16px;"></div>
+
+  <div id="emptyOrders" class="empty-state hidden">
+    <div class="icon">📦</div>
+    <h2>No orders yet</h2>
+    <p>When you place an order, it'll show up here.</p>
+    <a href="index.html" class="btn btn-primary" style="margin-top:16px;">Start shopping</a>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p><strong>Cartly</strong> — a demo full-stack e-commerce store. Built with Node, Express, MongoDB &amp; vanilla JS.</p>
+  </div>
+</footer>
+
+<script src="js/config.js"></script>
+<script src="js/api.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Cartly — Shop quality goods, simply</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div id="navbar"></div>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <span class="hero-eyebrow">New arrivals every week</span>
+      <h1>Everyday goods, thoughtfully chosen.</h1>
+      <p>Electronics, fashion, home essentials and more — curated for quality, priced fairly, delivered to your door.</p>
+      <a href="#catalog" class="btn btn-accent">Browse the catalog</a>
+    </div>
+  </div>
+</section>
+
+<main class="container" id="catalog">
+  <div class="toolbar">
+    <div class="toolbar-filters">
+      <div class="category-pills" id="categoryPills">
+        <button class="pill active" data-category="All">All</button>
+      </div>
+    </div>
+    <div style="display:flex; gap:10px; align-items:center;">
+      <span class="result-count" id="resultCount"></span>
+      <select class="select-field" id="sortSelect">
+        <option value="">Sort: Newest</option>
+        <option value="price_asc">Price: Low to High</option>
+        <option value="price_desc">Price: High to Low</option>
+        <option value="name_asc">Name: A–Z</option>
+      </select>
+    </div>
+  </div>
+
+  <div id="productGrid" class="product-grid"></div>
+  <div id="loadingSpinner" class="spinner"></div>
+  <div id="emptyState" class="empty-state hidden">
+    <div class="icon">🔎</div>
+    <h2>No products found</h2>
+    <p>Try a different search term or category.</p>
+  </div>
+
+  <div class="text-center" style="padding: 10px 0 40px;">
+    <button class="btn btn-outline hidden" id="loadMoreBtn">Load more products</button>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p><strong>Cartly</strong> — a demo full-stack e-commerce store. Built with Node, Express, MongoDB &amp; vanilla JS.</p>
+  </div>
+</footer>
+
+<script src="js/config.js"></script>
+<script src="js/api.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Admin Panel — Cartly</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div id="navbar"></div>
+
+<main class="container">
+  <div class="page-header">
+    <h1>Admin Panel</h1>
+    <p>Manage products, users, and orders.</p>
+  </div>
+
+  <div class="stats-row" id="statsRow"></div>
+
+  <div class="admin-tabs">
+    <div class="admin-tab active" data-tab="products">Products</div>
+    <div class="admin-tab" data-tab="orders">Orders</div>
+    <div class="admin-tab" data-tab="users">Users</div>
+  </div>
+
+  <!-- Products Panel -->
+  <section class="admin-panel active" id="panel-products">
+    <div class="admin-toolbar">
+      <span class="result-count" id="productCount"></span>
+      <button class="btn btn-accent" id="addProductBtn">+ Add Product</button>
+    </div>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Image</th><th>Name</th><th>Category</th><th>Price</th><th>Stock</th><th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="productsTableBody"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Orders Panel -->
+  <section class="admin-panel" id="panel-orders">
+    <div class="admin-toolbar">
+      <span class="result-count" id="orderCount"></span>
+    </div>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Order ID</th><th>Customer</th><th>Date</th><th>Items</th><th>Total</th><th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="ordersTableBody"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Users Panel -->
+  <section class="admin-panel" id="panel-users">
+    <div class="admin-toolbar">
+      <span class="result-count" id="userCount"></span>
+    </div>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th><th>Email</th><th>Role</th><th>Joined</th>
+          </tr>
+        </thead>
+        <tbody id="usersTableBody"></tbody>
+      </table>
+    </div>
+  </section>
+</main>
+
+<!-- Add / Edit Product Modal -->
+<div class="modal-overlay" id="productModal">
+  <div class="modal">
+    <div class="modal-head">
+      <h3 id="modalTitle">Add Product</h3>
+      <button class="modal-close" id="modalClose">&times;</button>
+    </div>
+    <div class="alert alert-error" id="modalAlert"></div>
+    <form id="productForm">
+      <input type="hidden" id="productId" />
+      <div class="form-group">
+        <label for="pName">Product Name</label>
+        <input type="text" id="pName" required />
+      </div>
+      <div class="form-group">
+        <label for="pDescription">Description</label>
+        <textarea id="pDescription" rows="3" required></textarea>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="pPrice">Price ($)</label>
+          <input type="number" id="pPrice" min="0" step="0.01" required />
+        </div>
+        <div class="form-group">
+          <label for="pStock">Stock Quantity</label>
+          <input type="number" id="pStock" min="0" step="1" required />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="pCategory">Category</label>
+        <input type="text" id="pCategory" required placeholder="e.g. Electronics" />
+      </div>
+      <div class="form-group">
+        <label for="pImage">Image URL</label>
+        <input type="url" id="pImage" placeholder="https://..." />
+      </div>
+      <button type="submit" class="btn btn-primary btn-block" id="saveProductBtn">Save Product</button>
+    </form>
+  </div>
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/api.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>
